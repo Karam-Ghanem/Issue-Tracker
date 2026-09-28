@@ -13,6 +13,7 @@ import { useState } from "react";
 import {zodResolver} from "@hookform/resolvers/zod";
 import createIssueSchema from "@/app/validate";
 import {z} from 'zod'
+import ErrorMessage from "@/app/components/ErrorMessage";
 
 // interface IssuesForm{
 //   title: string,
@@ -49,7 +50,7 @@ const AddIssue = () => {
 	        <TextField.Slot>
 	        </TextField.Slot>
         </TextField.Root>
-        {errors.title&&<p className="text-red-700">{errors.title.message}</p>}
+       <ErrorMessage>{errors.title?.message}</ErrorMessage>
         </div>
         <div className="mb-3.5">
             <Controller
@@ -57,7 +58,7 @@ const AddIssue = () => {
             control={control} 
             render={({field})=><SimpleMDE placeholder="Description" {...field}/>}
             />
-          {errors.description&&<p className="text-red-700">{errors.description.message}</p>}
+       <ErrorMessage>{errors.description?.message}</ErrorMessage>
 
         </div>
         <Button className="mt-3.5">Submit Addition Issue</Button>
