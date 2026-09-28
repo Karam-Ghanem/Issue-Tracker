@@ -1,11 +1,10 @@
 import prisma from "@/prisma/client";
-import { error } from "console";
 import { NextRequest, NextResponse } from "next/server";
 import {z} from "zod";
 
 const createIssueSchema = z.object({
-    title: z.string().min(1).max(255),
-    description: z.string().min(1),
+    title: z.string().min(3,'minimum is 3 ').max(255),
+    description: z.string().min(3,'minimum is 3 '),
 })
 export async function POST(request:NextRequest){
     const body = await request.json();
