@@ -28,9 +28,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col ">
-      <Theme>
+      <Theme accentColor="blue" grayColor="mauve">
         <NavBar/>
         <main className="p-5">{children}</main>
+        {/* <ThemePanel/> */}
       </Theme>
       </body>
     </html>
