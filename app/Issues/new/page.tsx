@@ -14,6 +14,7 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import createIssueSchema from "@/app/validate";
 import {z} from 'zod'
 import ErrorMessage from "@/app/components/ErrorMessage";
+import Spinner from "@/app/components/Spinner";
 
 // interface IssuesForm{
 //   title: string,
@@ -27,6 +28,7 @@ const AddIssue = () => {
   const router = useRouter()
   const {register,control,handleSubmit,formState:{errors}} = useForm<IssuesForm>({resolver:zodResolver(createIssueSchema)})
 
+  const [isSubmitted,setIsSubmitted] = useState(false)
   return (
     <div className="max-w-2xl">
     {error&&<Callout.Root color="red" className="mb-5">
@@ -37,10 +39,12 @@ const AddIssue = () => {
 
     <form onSubmit={ handleSubmit(async(data)=>{
       try {
+        setIsSubmitted(true)
         await axios.post('/api/issues',data);
         router.push('/Issues')
         
       } catch {
+        setIsSubmitted(false)
         setError('unexpected error occured')
       }
     })}>
@@ -61,7 +65,7 @@ const AddIssue = () => {
        <ErrorMessage>{errors.description?.message}</ErrorMessage>
 
         </div>
-        <Button className="mt-3.5">Submit Addition Issue</Button>
+        <Button className="mt-3.5">Submit Addition Issue {isSubmitted&&<Spinner/>}</Button>
     </div>
     </form>
     </div>
