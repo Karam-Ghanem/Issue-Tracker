@@ -1,8 +1,8 @@
-import IssueStatusBadge from '@/app/components/IssueStatusBadge';
 import prisma from '@/prisma/client'
-import { Heading } from '@radix-ui/themes';
+import { Box, Grid,  } from '@radix-ui/themes';
 import { notFound } from 'next/navigation'
-import ReactMarkDown from 'react-markdown';
+import IssueDetailsContent from './components/IssueDetailsContent';
+import EditIssueButton from './components/EditIssueButton';
 
 interface Props{
 params: Promise<{ id: string }>
@@ -19,20 +19,20 @@ const IssueDetails =async({params}:Props) => {
         notFound()
 
   return (
-    <div>
-      <Heading>{currentIssue?.title}</Heading>
-      <IssueStatusBadge status={currentIssue.status}/>
-      <p>{currentIssue?.createdAt.toDateString()}</p>
-
-    <article className="prose lg:prose-xl">
-    <div className="bg-cyan-400 p-7"><ReactMarkDown>{currentIssue?.description}</ReactMarkDown></div>
-
-    </article>
 
 
+    <Grid columns={{initial:'1',md:'2'}} >
+      <IssueDetailsContent currentIssue={currentIssue}/>
+    <Box>
+      <EditIssueButton id={currentIssue.id}/>
+    </Box>
+
+    </Grid>
 
 
-    </div>
+
+
+
   )
 }
 
