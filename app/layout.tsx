@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import NavBar from "./NavBar";
+import NavBar from "./navbar/NavBar";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
+import AuthProvider from "./auth/Provider";
+import QueryClientProvider from "@/QueryClientProvider";
 
 
 const geistSans = Geist({
@@ -28,11 +30,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col ">
-      <Theme accentColor="blue" grayColor="mauve">
-        <NavBar/>
-        <main className="p-5">{children}</main>
-        {/* <ThemePanel/> */}
-      </Theme>
+        <QueryClientProvider>
+          <AuthProvider>
+            <Theme accentColor="blue" grayColor="mauve">
+              <NavBar />
+              <main className="p-5">{children}</main>
+              {/* <ThemePanel/> */}
+            </Theme>
+          </AuthProvider>
+        </QueryClientProvider>
+
       </body>
     </html>
   );
