@@ -1,0 +1,57 @@
+npm warn cleanup Failed to remove some directories [
+npm warn cleanup   [
+npm warn cleanup     'D:\\OneDrive\\Desktop\\FrontEndDeveloper\\Next Js\\NextProjectWithMosh\\issue-tracker\\node_modules\\@sentry\\conventions',
+npm warn cleanup     [Error: EPERM: operation not permitted, unlink 'D:\OneDrive\Desktop\FrontEndDeveloper\Next Js\NextProjectWithMosh\issue-tracker\node_modules\@sentry\conventions\dist\search.mjs'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'D:\\OneDrive\\Desktop\\FrontEndDeveloper\\Next Js\\NextProjectWithMosh\\issue-tracker\\node_modules\\@sentry\\conventions\\dist\\search.mjs'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'D:\\OneDrive\\Desktop\\FrontEndDeveloper\\Next Js\\NextProjectWithMosh\\issue-tracker\\node_modules\\sentry',
+npm warn cleanup     [Error: ENOTEMPTY: directory not empty, rmdir 'D:\OneDrive\Desktop\FrontEndDeveloper\Next Js\NextProjectWithMosh\issue-tracker\node_modules\sentry\dist'] {
+npm warn cleanup       errno: -4051,
+npm warn cleanup       code: 'ENOTEMPTY',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'D:\\OneDrive\\Desktop\\FrontEndDeveloper\\Next Js\\NextProjectWithMosh\\issue-tracker\\node_modules\\sentry\\dist'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'D:\\OneDrive\\Desktop\\FrontEndDeveloper\\Next Js\\NextProjectWithMosh\\issue-tracker\\node_modules\\@sentry',
+npm warn cleanup     [Error: EPERM: operation not permitted, unlink 'D:\OneDrive\Desktop\FrontEndDeveloper\Next Js\NextProjectWithMosh\issue-tracker\node_modules\@sentry\conventions\dist\search.mjs'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'D:\\OneDrive\\Desktop\\FrontEndDeveloper\\Next Js\\NextProjectWithMosh\\issue-tracker\\node_modules\\@sentry\\conventions\\dist\\search.mjs'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'D:\\OneDrive\\Desktop\\FrontEndDeveloper\\Next Js\\NextProjectWithMosh\\issue-tracker\\node_modules\\@sentry\\core',
+npm warn cleanup     [Error: EPERM: operation not permitted, unlink 'D:\OneDrive\Desktop\FrontEndDeveloper\Next Js\NextProjectWithMosh\issue-tracker\node_modules\@sentry\core\build\cjs\api.js.map'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'D:\\OneDrive\\Desktop\\FrontEndDeveloper\\Next Js\\NextProjectWithMosh\\issue-tracker\\node_modules\\@sentry\\core\\build\\cjs\\api.js.map'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'D:\\OneDrive\\Desktop\\FrontEndDeveloper\\Next Js\\NextProjectWithMosh\\issue-tracker\\node_modules\\@sentry\\server-utils',
+npm warn cleanup     [Error: EPERM: operation not permitted, unlink 'D:\OneDrive\Desktop\FrontEndDeveloper\Next Js\NextProjectWithMosh\issue-tracker\node_modules\@sentry\server-utils\build\types\ai\google-genai\index.d.ts'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'unlink',
+npm warn cleanup       path: 'D:\\OneDrive\\Desktop\\FrontEndDeveloper\\Next Js\\NextProjectWithMosh\\issue-tracker\\node_modules\\@sentry\\server-utils\\build\\types\\ai\\google-genai\\index.d.ts'
+npm warn cleanup     }
+npm warn cleanup   ]
+npm warn cleanup ]
+npm error code ECONNRESET
+npm error syscall read
+npm error errno -4077
+npm error network read ECONNRESET
+npm error network This is a problem related to network connectivity.
+npm error network In most cases you are behind a proxy or have bad network settings.
+npm error network
+npm error network If you are behind a proxy, please make sure that the
+npm error network 'proxy' config is set properly.  See: 'npm help config'
+npm error A complete log of this run can be found in: C:\Users\ornina\AppData\Local\npm-cache\_logs\2026-10-04T19_30_32_382Z-debug-0.log

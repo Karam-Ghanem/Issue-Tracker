@@ -6,7 +6,7 @@ import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
 import AuthProvider from "./auth/Provider";
 import QueryClientProvider from "@/QueryClientProvider";
-
+export const dynamic = 'force-dynamic'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

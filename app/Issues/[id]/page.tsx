@@ -7,21 +7,31 @@ import DeleteIssueButton from './components/DeleteIssueButton';
 import { getServerSession } from 'next-auth';
 import authProvider from '@/app/auth/authOptions';
 import AssignIssueToUser from './components/AssignIssueToUser';
+import { cache } from 'react';
 
 
 interface Props{
 params: Promise<{ id: string }>
 }
 
+
+
+const getIssues = cache((issueId:number)=>{
+  return prisma.issue.findUnique({
+    where:{id:issueId}
+  })
+})
 const IssueDetails =async({params}:Props) => {
 
   const session =await getServerSession(authProvider)
     const {id} = await params;
 
     const issueID = parseInt(id)
-    const currentIssue = await prisma.issue.findUnique({
-        where:{id: issueID}
-    })
+    const currentIssue = await getIssues(issueID)
+
+    // const currentIssue = await prisma.issue.findUnique({
+    //     where:{id: issueID}
+    // })
 
     if(!currentIssue)
         notFound()
@@ -51,9 +61,7 @@ export default IssueDetails
 export async function generateMetadata({ params }:Props){
   const {id} = await params
   const issueId = parseInt(id)
-  const issue = await prisma.issue.findUnique({
-    where:{id:issueId}
-  })
+  const issue = await getIssues(issueId)
   return{
     title: `Details of ${issue?.title}`,
     description:`View and manage the details of the issue titled "${issue?.title}".`
