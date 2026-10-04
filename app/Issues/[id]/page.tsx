@@ -15,12 +15,6 @@ params: Promise<{ id: string }>
 
 const IssueDetails =async({params}:Props) => {
 
-
-
-
-
-
-
   const session =await getServerSession(authProvider)
     const {id} = await params;
 
@@ -52,3 +46,17 @@ const IssueDetails =async({params}:Props) => {
 }
 
 export default IssueDetails
+
+
+export async function generateMetadata({ params }:Props){
+  const {id} = await params
+  const issueId = parseInt(id)
+  const issue = await prisma.issue.findUnique({
+    where:{id:issueId}
+  })
+  return{
+    title: `Details of ${issue?.title}`,
+    description:`View and manage the details of the issue titled "${issue?.title}".`
+  }
+
+}

@@ -1,9 +1,6 @@
-'use client'
 import "easymde/dist/easymde.min.css";
-import dynamic from "next/dynamic";
-import NewPageLoading from "./NewPageLoading";
-// import IssuesForm from "../components/IssuesForm";
-const IssuesForm = dynamic(() => import("../components/IssuesForm"), {ssr: false,loading:()=><NewPageLoading/>});
+import { Metadata } from "next";
+import IssuesForm from "./importIssueForm";
 const AddIssue = ()  => {
     
 
@@ -13,3 +10,8 @@ const AddIssue = ()  => {
 }
 
 export default AddIssue
+
+export const metadata: Metadata = {
+  title: 'Issue Tracker - New Issue',
+  description: 'Create and submit a new issue with title and detailed description.',
+};

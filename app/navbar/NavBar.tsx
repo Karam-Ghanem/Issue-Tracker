@@ -20,7 +20,7 @@ const NavBar = () => {
     <>
      <Container className="bg-amber-300">
       <Flex className=" justify-between py-4 space-x-3">
-        <FaBug className="ms-1" size={25}/>
+          <Link href={'/'}><FaBug className="ms-1" size={25} /></Link>
         <NavLinks/>
       <Box className=" w-full text-end">
         <AuthStatus/>
