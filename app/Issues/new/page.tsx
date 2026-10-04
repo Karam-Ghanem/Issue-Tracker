@@ -1,6 +1,7 @@
 import "easymde/dist/easymde.min.css";
 import { Metadata } from "next";
 import IssuesForm from "./importIssueForm";
+export const dynamic = 'force-dynamic';
 const AddIssue = ()  => {
     
 
